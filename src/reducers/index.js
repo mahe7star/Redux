@@ -1,5 +1,9 @@
-import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
-import BooksReducer from './reducers/reducer_books';
+import { combineReducers } from 'redux';
+import BooksReducer from './reducer_books';
 
+const rootReducer = combineReducers({
+    books:BooksReducer,
+})
+
+export default rootReducer;
 
