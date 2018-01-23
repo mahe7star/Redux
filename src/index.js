@@ -6,14 +6,13 @@ import {Provider} from 'react-redux';
 import { createStore } from 'redux';
 import Reducers from './reducers/index';
 
-
+const store = createStore(Reducers);
 const Element=()=> {
-	return <App/>;
+	return (
+		<Provider store={ store }>
+			<App/>
+		</Provider>
+	);
 }
 
-ReactDOM.render(
-	<Provider store={ createStore(Reducers) }>
-		<Element/>
-	</Provider>, 
-	document.getElementById('root')
-);
+ReactDOM.render(<Element/>, document.getElementById('root'));
